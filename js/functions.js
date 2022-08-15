@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; // allows JavaScript's silent errors to be shown.
 
 /**
  * TODO:
@@ -29,12 +29,12 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-// let myName = "Tesfalem";
-// sayHello(myName);
+let myName = "Tesfalem";
+sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+// let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -55,7 +55,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 function isTwo(num) {
     console.log(num);
-    return num === 2 ? true : false;
+    return num === 2;
 }
 console.log(isTwo(random));
 /**
@@ -69,8 +69,8 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(percentage, bill) {
-    return percentage * bill;
+function calculateTip(tipPercentage, billTotal) {
+    return tipPercentage * billTotal;
 }
 /**
  * TODO:
@@ -78,10 +78,13 @@ function calculateTip(percentage, bill) {
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let totalBill = prompt("What is the total bill of the order?");
-let tipPercentage = prompt("What is the tip percentage of the bill?");
-alert(totalBill * tipPercentage);
+let totalBill = prompt("What is your bill total?");
+console.log(totalBill);
+let tipPercentage = prompt("What percentage would you like to tip?");
+console.log(tipPercentage);
 
+let tip = calculateTip(tipPercentage/100, totalBill);
+alert("Your tip is $" + tip.toFixed(2));
 
 /**
  * TODO:

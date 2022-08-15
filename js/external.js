@@ -1,3 +1,5 @@
+"use strict"; // allows JavaScript's silent errors to be shown.
+
 console.log("Hello form external javascript");
 
 alert("Welcome to my Website!");

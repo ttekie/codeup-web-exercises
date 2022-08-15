@@ -5,176 +5,186 @@
     <title>First Functions</title>
 </head>
 <body>
+Hello World
 
-<script>
-    function calculateCircumference(radius) {
-        const pi = 3.14159;
-        let circumference = 2 * pi * radius;
-        return circumference;
-    }
-
-    function milesToKilometers(miles) {
-        const kilometers = 1.60934;
-        return miles * kilometers;
-    }
-
-    function gallonsToLiters(gallons) {
-        const liters = 3.78541;
-        return gallons * liters;
-    }
-
-    function celsiusToFahrenheit(celsius) {
-        return (celsius * 1.8) + 32;
-    }s
-
-    let number = 20;
-    if(number % 2 === 0) {
-        console.log("That number is even");
-    } else {
-        console.log("That number is odd");
-    }
-
-   function isOdd(number) {
-        if(number % 2 === 1) {
-            return true;
-        } else {
-            return false;
+    <script>
+        "use strict";
+        function calculateCircumference(radius) {
+            const pi = 3.14159;
+            let circumference = 2 * pi * radius;
+            return circumference;
         }
-    }
 
-    function isOdd(number) {
-        return number % 2 === 1;
-    }
-
-
-    if(number % 5 === 0 && number % 3 === 0) {
-        console.log("That number is divisible by both 5 and 3.");
-    } else {
-        console.log("That number is either not divisible by 5 or not divisible by 3, or both");
-    }
-
-    function divisibleByFiveAndThree(number) {
-        return number % 5 === 0 && number % 3 === 0;
-    }
-
-    function divisibleBySevenOrThree(number) {
-        return number % 7 === 0 || number % 3 === 0;
-    }
-
-    function divisibleByThreeOrTwo(number) {
-        return number % 3 === 0 || number % 2 === 0;
-    }
-
-    function isOddAndDivisibleByThree(number) {
-        return number % 2 === 1 && number % 3 === 0;
-    }
-
-    function isOddOrDivisibleByThree(number) {
-        return number % 2 === 1 || number % 3 === 0;
-    }
-
-    let myName = "Tesfalem";
-    let myLastName = "Tekie";
-    let myFullName = myName + " " + myLastName;
-    console.log(myFullName);
-    console.log(`${myName} ${myLastName}`);
-
-    function fullName(first, middle, last) {
-        return "`${first} ${middle} ${last}`;"
-    }
-
-    // function fullAddress(houseNum, streetName, city, state, zip) {
-    //     let address =  houseNum + " " + streetName + \ncity + " " + state + " " + zip;
-    //     return address;
-    // }
-    // number
-    function temperatureConversion(temperature, isFahrenheit) {
-        if(isFahrenheit === true) {
-            return (temperature - 31) * 5 / 9;
-        } else {
-            return (temperature * 9 /5) + 32;
+        function milesToKilometers(miles) {
+            const kilometers = 1.60934;
+            return miles * kilometers;
         }
-    }
 
-    // Bonus. Change your functions for liters-gallons and
-    // miles-kilometers so they convert both ways.
+        function gallonsToLiters(gallons) {
+            const liters = 3.78541;
+            return gallons * liters;
+        }
 
-   function upperCase(str) {
-        return str.toUpperCase();
-   }
-  console.log(upperCase("tesfalem"));
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 1.8) + 32;
+        }s
 
-   function lowerCase(str) {
-        return str.toLowerCase();
-   }
-   console.log(lowerCase("Dog"));
+        let number = 20;
+        if(number % 2 === 0) {
+            console.log("That number is even");
+        } else {
+            console.log("That number is odd");
+        }
 
-   function trimString(str) {
-        return str.trim();
-   }
-   console.log(trimString(" Hello World! "));
+       // function isOdd(number) {
+       //      if(number % 2 === 1) {
+       //          return true;
+       //      } else {
+       //          return false;
+       //      }
+       //  }
 
-   function stringLength(str) {
-        return str.length;
-   }
-   console.log(stringLength("codeup"));
-
-   function indexOfCharacter(char, str) {
-        return str.indexOf(char);
-   }
-   console.log(indexOfCharacter("o", "San Antonio"));
-
-   function replaceString(str1, str2, str3) {
-       return str1.replace(str2, str3);
-   }
-
-   function replaceSecondInstance(str1, str2, str3) {
-       return str1.replaceAll(str2, str3);
-   }
-
-   function subString(str, num1, num2) {
-       return str.substring(num1, num2);
-   }
+        function isOdd(number) {
+            return number % 2 === 1;
+        }
 
 
-   function dataType(value) {
-       return typeof value;
-   }
+        if(number % 5 === 0 && number % 3 === 0) {
+            console.log("That number is divisible by both 5 and 3.");
+        } else {
+            console.log("That number is either not divisible by 5 or not divisible by 3, or both");
+        }
 
-   let someValue = 42;
-   if(dataType(someValue) === "number") {
-       console.log("That's a number");
-   } else {
-       console.log("That's not a number");
-   }
+        function divisibleByFiveAndThree(number) {
+            return number % 5 === 0 && number % 3 === 0;
+        }
 
-   function isNumber(value) {
-       if(isNaN(value) || typeof value === "boolean") {
-           return false;
-       } else {
-           return true;
+        function divisibleBySevenOrThree(number) {
+            return number % 7 === 0 || number % 3 === 0;
+        }
+
+        function divisibleByThreeOrTwo(number) {
+            return number % 3 === 0 || number % 2 === 0;
+        }
+
+        function isOddAndDivisibleByThree(number) {
+            return number % 2 === 1 && number % 3 === 0;
+        }
+
+        function isOddOrDivisibleByThree(number) {
+            return number % 2 === 1 || number % 3 === 0;
+        }
+
+        let myName = "Tesfalem";
+        let myLastName = "Tekie";
+        let myFullName = myName + " " + myLastName;
+        console.log(myFullName);
+        console.log(`${myName} ${myLastName}`);
+
+        function fullName(first, middle, last) {
+            return "`${first} ${middle} ${last}`;"
+        }
+
+        function fullAddress(houseNum, streetName, city, state, zip) {
+            let address =  houseNum + " " + streetName + ", " + city + " " + state + ", " + zip;
+            return address;
+        }
+
+        function temperatureConversion(temperature, isFahrenheit) {
+            if(isFahrenheit === true) {
+                return (temperature - 31) * 5 / 9;
+            } else {
+                return (temperature * 9 /5) + 32;
+            }
+        }
+
+        // Bonus. Change your functions for liters-gallons and
+        // miles-kilometers, so they convert both ways.
+
+       function upperCase(str) {
+            return str.toUpperCase();
        }
-   }
-    console.log(isNumber(5));
+      console.log(upperCase("tesfalem"));
 
-   //the above and below function does the same action
-   function isNumber(value) {
-       return !(isNaN(value) || typeof value === "boolean");
-   }
+       function lowerCase(str) {
+            return str.toLowerCase();
+       }
+       console.log(lowerCase("Dog"));
 
-   // Write a function that takes two values.
-    // If the values can be converted to numbers,
-    // the function should return their product.
-    // Otherwise, the function should return false.
+       function trimString(str) {
+            return str.trim();
+       }
+       console.log(trimString(" Hello World! "));
 
-    function product(value1, value2) {
-        if (isNaN(parseFloat(value1)) || isNaN(parseFloat(value2))) {
-            return false;
-        } else {
-            return parseFloat(value1) * parseFloat(value2);
+       function stringLength(str) {
+            return str.length;
+       }
+       console.log(stringLength("codeup"));
+
+       function indexOfCharacter(char, str) {
+            return str.indexOf(char);
+       }
+       console.log(indexOfCharacter("o", "San Antonio"));
+
+       function replaceString(str1, str2, str3) {
+           return str1.replace(str2, str3);
+       }
+
+       function replaceSecondInstance(str1, str2, str3) {
+           return str1.replaceAll(str2, str3);
+       }
+
+       function subString(str, num1, num2) {
+           return str.substring(num1, num2);
+       }
+
+
+       function dataType(value) {
+           return typeof value;
+       }
+
+       let someValue = 42;
+       if(dataType(someValue) === "number") {
+           console.log("That's a number");
+       } else {
+           console.log("That's not a number");
+       }
+       //
+       // function isNumber(value) {
+       //     if(isNaN(value) || typeof value === "boolean") {
+       //         return false;
+       //     } else {
+       //         return true;
+       //     }
+       // }
+        console.log(isNumber(5));
+
+       //the above and below function does the same action
+       function isNumber(value) {
+           return !(isNaN(value) || typeof value === "boolean");
+       }
+
+       // Write a function that takes two values.
+        // If the values can be converted to numbers,
+        // the function should return their product.
+        // Otherwise, the function should return false.
+
+        function product(value1, value2) {
+            if (isNaN(parseFloat(value1)) || isNaN(parseFloat(value2))) {
+                return false;
+            } else {
+                return parseFloat(value1) * parseFloat(value2);
+            }
         }
-    }
 
-</script>
-</body> 
+       let userInput = prompt("What is your name?");
+       if(userInput === null) {
+           alert("please enter your name?");
+       } else {
+           alert("Now you can processed to the next input");
+       }
+
+
+    </script>
+</body>
 </html>
