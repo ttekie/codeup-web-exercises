@@ -59,6 +59,6 @@
         }
 
         function last(arr) {
-            return arr[4];
+            return arr[names.length - 1];
         }
 })();
