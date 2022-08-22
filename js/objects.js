@@ -139,12 +139,16 @@
      *      ---
      *      ...
      */
-     // books.forEach((book, index) => {
-     //     console.log("Book # " + (index += 1));
-     //     console.log("Title: " + book.title);
-     //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-     //     console.log("---");
-     // });
+     books.forEach((book, index) => {
+         console.log("Book # " + (index + 1));
+         console.log("Title: " + book.title);
+         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+         console.log("---");
+
+         // let bookInfo = `Book # ${index += 1} \n Title: ${book.title} \n Author: ${book.author.firstName} ${book.author.lastName} `;
+         // console.log(bookInfo);
+         // console.log("");
+     });
 
     /**
      * Bonus:
@@ -157,47 +161,37 @@
      *   `showBookInfo` function.
      */
     function createBook(title, author) {
-        let book = {};
+        let books = {};
         books.title = title;
         books.author = author;
-        return book;
+        return books;
+
     }
 
-    let book = [
-        createBook("The Golden Compass", "Philip Pullman"),
-        createBook("A Walk in the Woods", "Bill Bryson"),
-        createBook("Number of Stars", "Lois Lowry"),
-        createBook("The Lightning Thief", "Rick Riordan"),
-        createBook( "The power and Glory", "Graham Greene")
-    ];
-
-    // function showBookInfo(books) {
-    //     let bookInfo = "";
-    //     books.forEach((item, index) => {
-    //         bookInfo += "Book # " + (index + 1);
-    //         bookInfo += "\nTitle: " + item.title;
-    //         bookInfo += "\nAuthor: " + item.author.firstName + " " + item.author.lastName;
-    //         bookInfo += "\n---";
-    //     });
-    //     return bookInfo;
-    // }
-    // console.log(showBookInfo(books));
+    books.push(createBook("The Golden Compass", "Philip Pullman"));
+    books.push(createBook("A Walk in the Woods", "Bill Bryson"));
+    books.push(createBook("Number of Stars", "Lois Lowry"));
+    books.push(createBook("The Lightning Thief", "Rick Riordan"));
+    books.push(createBook( "The power and Glory", "Graham Greene"));
 
 
-    function showBookInfo(books) {
+    function showBookInfo(book) {
         let bookInfo = "";
-        let counter = 1;
-        for(let property in books) {
-            bookInfo += "Book # " + counter;
-            bookInfo += "\nTitle: " + book[property];
-            bookInfo += "\nAuthor: " + book[property].firstName + " " + book[property].lastName;
-            bookInfo = "\n---";
-            counter++;
-        }
+        bookInfo += "Book Title: " + book.title + ".";
+        bookInfo += "\nAuthor: " + book.author.firstName + " " + book.author.lastName + ".";
         return bookInfo;
     }
 
-    console.log(showBookInfo(books[0]));
+    // for(let i = 0; i < books.length; i++) {
+    //     console.log(showBookInfo(books[i]));
+    //     console.log("");
+    // }
+
+    // it does the same thing as the above code
+    books.forEach((item) => {
+        console.log(showBookInfo(item));
+        console.log("");
+    });
 
 })();
 
