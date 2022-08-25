@@ -25,10 +25,10 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
      person.sayHello = function() {
-         console.log("Hello form " + person.firstName + " " + person.lastName + "!");
+         console.log("Hello form " + this.firstName + " " + this.lastName + "!");
      }
      person.sayHello();
-     console.log("");
+     // console.log("");
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -50,24 +50,18 @@
         {name: 'George', amount: 320}
     ];
 
-    for(let i = 0; i < shoppers.length; i++) {
-        if(shoppers[i].amount > 200) {
-            console.log(shoppers[i].name + "'s shopping amount before the discount was " + shoppers[i].amount + " dollar");
-            console.log(shoppers[i].name + " " + "gets a discount of " + "$" + shoppers[i].amount * (12 / 100) + " dollar");
-            console.log(shoppers[i].name + " " + "needs to pay " + "$" + (shoppers[i].amount - shoppers[i].amount * (12 / 100)));
+    shoppers.forEach((shopper) =>{
+        if(shopper.amount > 200) {
+            console.log(`${shopper.name}'s shopping amount before the discount was $${shopper.amount} dollar`);
+            console.log(`${shopper.name} gets a discount of $${shopper.amount * (12 / 100)} dollar`);
+            console.log(`${shopper.name} needs to pay $${shopper.amount - shopper.amount * (12 / 100)}`);
         } else {
-            console.log(shoppers[i].name + " " + "shopping amount before the discount was " + shoppers[i].amount);
-            console.log(shoppers[i].name + " " + "did not get a discount, because his shopping amount is less than " + 200);
-            console.log(shoppers[i].name + " " + "needs to pay " + shoppers[i].amount);
+            console.log(`${shopper.name} shopping amount before the discount was $${shopper.amount}`);
+            console.log(`${shopper.name} did not get a discount, because his shopping amount is less than $200.`);
+            console.log(`${shopper.name} needs to pay shopper.amount`);
         }
         console.log("");
-    }
-
-    shoppers.forEach((item) =>{
-        console.log(`${item.name} buy some products form HEB for the amount of ${item.amount}`);
     });
-
-    console.log("");
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -139,16 +133,12 @@
      *      ---
      *      ...
      */
-     books.forEach((book, index) => {
-         console.log("Book # " + (index + 1));
-         console.log("Title: " + book.title);
-         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-         console.log("---");
-
-         // let bookInfo = `Book # ${index += 1} \n Title: ${book.title} \n Author: ${book.author.firstName} ${book.author.lastName} `;
-         // console.log(bookInfo);
-         // console.log("");
-     });
+     // books.forEach((book, index) => {
+     //     console.log("Book # " + (index + 1));
+     //     console.log(`Title: ${book.title}`);
+     //     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+     //     console.log("---");
+     // });
 
     /**
      * Bonus:
@@ -160,21 +150,37 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title, author) {
-        let books = {};
-        books.title = title;
-        books.author = author;
-        return books;
+    function createBook(title, firstName, lastName) {
+        let newBook = {};
+        newBook.title = title;
+        newBook.author = {
+            firstName: firstName,
+            lastName: lastName
+        }
+        return newBook;
 
+        // or could be done like this
+        // return {
+        //     title: title,
+        //     author: {
+        //         firstName: firstName,
+        //         lastName: lastName
+        //     }
+        // }
     }
 
-    books.push(createBook("The Golden Compass", "Philip Pullman"));
-    books.push(createBook("A Walk in the Woods", "Bill Bryson"));
-    books.push(createBook("Number of Stars", "Lois Lowry"));
-    books.push(createBook("The Lightning Thief", "Rick Riordan"));
-    books.push(createBook( "The power and Glory", "Graham Greene"));
+    books.push(createBook("When Breath Becomes Air", "Paul", "Kalanithi"));
 
+    books.forEach((book, index) => {
+        console.log("Book # " + (index + 1));
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log("---");
+    });
 
+    console.log("");
+
+    // showBookInfo function will display each book and author
     function showBookInfo(book) {
         let bookInfo = "";
         bookInfo += "Book Title: " + book.title + ".";
@@ -182,13 +188,9 @@
         return bookInfo;
     }
 
-    // for(let i = 0; i < books.length; i++) {
-    //     console.log(showBookInfo(books[i]));
-    //     console.log("");
-    // }
-
-    // it does the same thing as the above code
-    books.forEach((item) => {
+    //will loop through each element of the books array
+    books.forEach((item, index) => {
+        console.log("Book # " + (index + 1));
         console.log(showBookInfo(item));
         console.log("");
     });
