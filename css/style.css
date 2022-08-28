@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/*
+* from this exercise, what I understood is that, the inline style has high precedence
+* than the embedded and external style. also, the embedded style has high precedence
+* than the external style.
+*/
+body {
+    background-color: #add8e6;
+    background-image: url(../img/veridian.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+}
+.fancy-header {
+    text-align: center;
+    color: #006400;
+    text-decoration: underline;
+}
+h2 {
+    color: #006400;
+}
+ul {
+    list-style-type: lower-alpha;
+    list-style-position: inside;
+}
+ol {
+    list-style-position: inside;
+}
+table {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 60%;
+}
+table, th, td {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: left;
+}
+th {
+    background-color: #48d1cc;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ddd;
+}
+p:last-of-type{
+    text-align: center;
+}
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: purple;
+}
+a:hover, a:active {
+    color: #ff0000;
+}
