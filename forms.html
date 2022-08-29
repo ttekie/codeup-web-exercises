@@ -3,50 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Register With Us</title>
+    <style>
+        body {
+            background-color: #778899;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Registration page for Veridian Dynamics</h1>
     <form method="GET" action="https://request-inspector.glitch.me/">
         <p>
-            <label for="">
-            Email <input type="email" id="email" name="email" placeholder="Enter your email">
-            </label>
+            <label for="">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
         </p>
         <p>
-            <label for="">
-            Password <input type="password" id="password" name="password" placeholder="Enter your password">
-            </label>
+            <label for="">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
         </p>
-        <div>
-            <label for="">Enter your Biography here:</label>
-        </div>
-        <textarea name="bio" id="biography" cols="50" rows="10">Please enter you bio here...</textarea>
-        <section>
-            <label for="question">How did you hear about us?</label>
-            <label for="answer">
-              billboard<input type="radio" name="billboard" value="billboard">
-            </label>
-            <label for="answer">
-              radio advertisement<input type="radio" name="radio-advertisement" value="radio advertisement">
-            </label>
-            <label for="answer">
-              internet advertisement<input type="radio" name="internet-advertisement" value="internet advertisement">
-            </label>
-            <label for="answer">
-              other<input type="radio" name="other" value="other">
-            </label>
-        </section>
-        <section>
-            <label for="">What web browser are you using?</label>
-            <select name="web-browser" id="browser">
-                <option value="Chrome">Chrome</option>
-                <option value="Firefox">firefox</option>
-                <option value="Internet Explorer">Internet Explorer</option>
-                <option value="Safari">Safari</option>
-                <option value="Opera">Opera</option>
-                <option value="Other">Other</option>
-            </select>
-        </section>
+
+        <label for="">Enter your Biography here:</label><br>
+        <textarea name="bio" id="biography" cols="50" rows="10">Please enter you bio here...</textarea><br>
+        <br>
+
+        <label for="question">How did you hear about us?</label><br>
+        <input type="radio" name="billboard" value="billboard">
+        <label for="answer">billboard</label><br>
+
+        <input type="radio" name="radio-advertisement" value="radio advertisement">
+        <label for="answer">radio advertisement<label for="answer"><br>
+
+        <input type="radio" name="internet-advertisement" value="internet advertisement">
+        </label>internet advertisement</label><br>
+
+        <input type="radio" name="other" value="other">
+        <label for="answer">other</label>
+
+        <label for="">What web browser are you using?</label>
+        <select name="web-browser" id="browser">
+            <option value="Chrome">Chrome</option>
+            <option value="Firefox">firefox</option>
+            <option value="Internet Explorer">Internet Explorer</option>
+            <option value="Safari">Safari</option>
+            <option value="Opera">Opera</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <br>
         <button type="submit">Submit</button>
     </form>
 </body>

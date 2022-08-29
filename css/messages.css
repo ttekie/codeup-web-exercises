@@ -1,0 +1,37 @@
+:root {
+    --bg-info: #6422dd;
+    --text-info: #51ae53;
+    --bg-success: #c96536;
+    --text-success: #C4A484;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message {
+    border: 1px solid #ccc;
+    margin: 0 auto 10px;
+    width: 70%;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.message-info {
+    margin-top: 2rem;
+    background-color: rgba(0, 114, 198, 0.31);
+    color: var(--bg-info);
+}
+.message-success {
+    background-color: rgba(13, 220, 0, 0.18);
+    color: var(--text-info);
+}
+.message-warning {
+    background-color: rgba(255, 252, 0, 0.28);
+    color: var(--text-success);
+}
+.message-error {
+    background-color: rgba(255, 0, 190, 0.17);
+    color: var(--bg-success);
+}
