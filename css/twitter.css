@@ -64,23 +64,55 @@ a {
     float: right;
     line-height: 80px;
 }
+.container {
+    padding: 2em 0;
+}
 /* add selector and property */
 .profile-details {
     float: left;
-    width: 25%;
-    margin: 0 calc();
+    width: calc(25% - 1em);
+    margin: 0 0.5em;
+}
+/* add selector and property */
+.profile-items {
+    list-style-type: none;
+    padding-left: 0;
+}
+/* add selector and property */
+.profile-entry {
+    width: calc(100% - 50px);
+    margin: 0.5em 0;
 }
 /* add selector and property */
 .timeline {
     float: left;
-    width: 50%;
-    margin: 0 calc();
+    width: calc(50% - 1em);
+    margin: 0 0.5em;
 }
 /* add selector and property */
 .who-to-follow {
     float: left;
-    width: 25%;
-    margin: 0 calc();
+    width: calc(25% - 1em);
+    margin: 0 0.5em;
+}
+/* add selector and property */
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: 0.5em;
+    overflow: hidden;
+}
+/* add selector and property */
+.media-image {
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+/* add selector and property */
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -97,10 +129,6 @@ a {
 .img-circle {
     border-radius: 100%;
     border: 4px solid var(--light-bg);
-}
-/* add code */
-.media-image {
-
 }
 .text-right {
     text-align: right;
