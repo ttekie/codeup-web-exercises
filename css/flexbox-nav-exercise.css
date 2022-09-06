@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+.main-header {
+    background-color: #ddd;
+}
+.nav-bar {
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    padding: 0 0.9rem;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(0, 0, 255);
+}
+div:nth-of-type(2) {
+    margin: 0 auto;
+}
+.material-symbols-outlined {
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
