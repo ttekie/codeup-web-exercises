@@ -166,7 +166,12 @@ function beeramid(bonus, price) {
 //   lastName: '...',
 // }
 //
-
+function getSimplerUser(obj) {
+    let userObj = {};
+    userObj.firstName = obj.firstName;
+    userObj.lastName = obj.lastName;
+    return userObj;
+}
 
 
 //Problem number 2:
@@ -174,15 +179,15 @@ function beeramid(bonus, price) {
 // Create a function, createNames, that takes in an array of first names and an array of last names. The function should return an array of name objects with firstName and lastName properties with the input array values. Assume both input arrays are not empty, the same length and only contain string elements.
 //
 //     var firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
-// var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
+//      var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
 //
 // createNames(firstNames, lastNames) // returns...
 //
 //     [
-//     {
-//         firstName: 'CJ',
-//         lastName: 'Cat'
-//     },
+//          {
+//              firstName: 'CJ',
+//              lastName: 'Cat'
+//          },
 //         {
 //             firstName: 'Max',
 //             lastName: 'Feline'
@@ -199,7 +204,9 @@ function beeramid(bonus, price) {
 //
 // HINT: a solution may involve using a for loop to iterate over the length of one array to push each name object onto an array of name objects that will be returned from the function.
 
+function createNames(firstName, lastName) {
 
+}
 
 
 
