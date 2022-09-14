@@ -7,19 +7,12 @@ let homeTab = document.querySelector("#home-tab");
 let profileTab = document.querySelector("#profile-tab");
 let contactTab = document.querySelector("#contact-tab");
 
-homeTab.addEventListener("click", () => {
+homeTab.addEventListener("click", function (){
     home.classList.add("show");
-    profile.classList.remove("show");
-    contact.classList.remove("show");
 });
-profileTab.addEventListener("click", () => {
+profileTab.addEventListener("click", function (){
     profile.classList.add("show");
-    home.classList.remove("show");
-    contact.classList.remove("show");
-
 });
-contactTab.addEventListener("click", () =>{
+contactTab.addEventListener("click", function (){
     contact.classList.add("show");
-    profile.classList.remove("show");
-    contact.classList.remove("show");
 });
