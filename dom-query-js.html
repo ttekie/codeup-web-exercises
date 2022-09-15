@@ -48,7 +48,20 @@
             listItems[i].style.color = "grey";
         }
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue";
+        listItems = Array.from(listItems);
+        for(let i = 0; i < listItems.length; i++) {
+            if(listItems[i].dataset.dbid === "1") {
+                listItems[i].style.color = "blue";
+            }
+        }
+        // how to turn a nodeList into an array --
+        // solve by Deshawn Williams
+        // listItems = Array.from(listItems);
+        // listItems.forEach(function(listItem) {
+        //     if(listItem.dataset.dbid === "1") {
+        //         listItem.style.color = "blue";
+        //     }
+        // });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
