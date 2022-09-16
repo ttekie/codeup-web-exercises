@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+    <style>
+        .open {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,6 +29,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button class="button first-button">first button</button>
+<button class="button second-button">second button</button>
+<button class="button third-button">third button</button>
+<button class="button fourth-button">fourth button</button>
 
 <script>
     (function() {
@@ -68,6 +77,25 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerText = "Mission Accomplished";
+
+        let firstButton = document.querySelector(".first-button");
+        let secondButton = document.querySelector(".second-button");
+        let thirdButton = document.querySelector(".third-button");
+        let fourthButton = document.querySelector(".fourth-button");
+
+
+        firstButton.addEventListener("click", function(){
+            listItems[0].innerHTML = "Javascript is cool";
+        });
+        secondButton.addEventListener("click", function(){
+            listItems[1].innerHTML = "Java is an object oriented programming language";
+        });
+        thirdButton.addEventListener("click", function(){
+            listItems[2].innerHTML = "MySQL MySQL is an open-source relational database management system";
+        });
+        fourthButton.addEventListener("click", function(){
+            listItems[3].innerHTML = "SQL s a standardized programming language that is used to manage relational databases";
+        });
     })();
 </script>
 </body>
