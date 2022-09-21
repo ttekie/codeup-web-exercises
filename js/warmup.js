@@ -210,6 +210,116 @@ function createNames(firstName, lastName) {
 
 
 
+const attendance = {
+    miami: 32789,
+    buffalo: 45678,
+    portland: 24567
+}
+
+// Given the attendance object, write a function that returns the total attendance across all teams.
+function totalAttendance(obj) {
+    let total = 0;
+    for(let property in obj) {
+        total += obj[property];
+    }
+    return total;
+}
+// Given the attendance object, write a function that returns the average attendance
+function averageAttendance(obj) {
+    let array = Object.values(obj);
+    let total = 0;
+    for(let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    return total / array.length;
+}
+// Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance properties set to the correct values
+function createObject(attendanceObject) {
+    let total = 0;
+    for(const prop in attendance) {
+        total += attendance[prop];
+    }
+    return {
+        totalAttendance: total,
+        averageAttendance: total / Object.keys(attendance).length
+    }
+}
+// Convert to Number
+//  * You prepare a list to send to the insurance company. As you finish, you notice you misformatted it.
+//  * Write a function named convertToNumber that takes in an object with at least one key/value pair, convert all the values to numbers.
+//  *
+//  * Examples
+//  *
+//  * convertToNumber({ piano: "200" }) ➞ { piano: 200 }
+//  * convertToNumber({ piano: "200", tv: "300" }) ➞ { piano: 200, tv: 300 }
+//  * convertToNumber({ piano: "200", tv: "300", stereo: "400" }) ➞ { piano: 200, tv: 300, stereo: 400 }
+//  */
+function convertToNumber(object) {
+    let newArray = Object.keys(object);
+    let obj = {};
+    for(let i = 0; i < newArray.length; i++) {
+        obj[newArray[i]] = Number(object[newArray[i]]);
+    }
+    return obj;
+}
+
+
+/**
+ * Convert Address to Object
+ * Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+ *
+ * Examples
+ *
+ * >> convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+ * >> convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+ **/
+
+
+/**
+ * Count total pets
+ * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
+ *
+ * Examples
+ *
+ * >> totalPets([
+ *       {name: 'Fernando Mendoza', pets: 1},
+ *       {name: 'Douglas Hirsh', pets: 8},
+ *       {name: 'Kenneth Howell', pets: 2}
+ *    ]) ➞ 11
+ */
+
+/**
+ * Find the Smallest and Biggest Numbers
+ * Create a function named minMax that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+ *
+ * Examples
+ * >> minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+ * >> minMax([2334454, 5]) ➞ [5, 2334454]
+ * >> minMax([1]) ➞ [1, 1]
+ *
+ * Notes
+ * All test arrays will have at least one element and are valid.
+ */
+
+
+/**
+ * Filter out Strings from an Array
+ * Create a function named filterArray that takes an array of non-negative integers and strings and return a new array without the strings.
+ *
+ * Examples
+ *
+ * >> filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+ * >> filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+ * >> filterArray([1, 2, "aasf", "1", "123", 123]) ➞ [1, 2, 123]
+ *
+ * Notes
+ * Zero is a non-negative integer.
+ * The given array only has integers and strings.
+ * Numbers in the array should not repeat.
+ * The original order must be maintained.
+ */
+
+
 
 
 
