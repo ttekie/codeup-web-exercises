@@ -1,0 +1,11 @@
+.invisible {
+    visibility: hidden;
+}
+dt {
+    width: 90%;
+}
+.page-update {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+}
