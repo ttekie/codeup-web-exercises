@@ -4,7 +4,8 @@
 dt {
     width: 90%;
 }
-.page-update {
+.page-update,
+#change-background {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border: 2px solid black;
