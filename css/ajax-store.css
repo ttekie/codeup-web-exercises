@@ -1,0 +1,25 @@
+#products {
+    width: 80%;
+    margin: 0 auto;
+}
+.main-header {
+    background: url("../img/tool-store.jpg");
+    /*background-size: cover;*/
+    object-fit: cover;
+}
+.bg-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+.bg-heading h1 {
+    color: #6422dd;
+    font-size: 3rem;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #cbffcd;
+}
