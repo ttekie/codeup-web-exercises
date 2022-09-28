@@ -1,19 +1,10 @@
 $(function(){
 
-    // mapboxgl.accessToken = MAPBOX_MAP_API_TOKEN;
-    // const map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-    //     center: [-98.489615, 29.426827], // starting position [lng, lat]
-    //     zoom: 10, // starting zoom
-    //     projection: 'globe' // display the map as a 3D globe
-    // });
-
     mapboxgl.accessToken = 'pk.eyJ1IjoidGVzdGVraWUiLCJhIjoiY2w4ZXB1aXl2MDAyYTN3bmdiano1dzd6OSJ9.nHzI_4vctysm2PeVKn2fdw';
     const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
         container: 'map',
-// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [0, 0],
         zoom: 2
@@ -46,12 +37,12 @@ $(function(){
             if( i % 8 === 0) {
                 $("#forecast-card").append(`
                     <div class="card-wrapper">
-                        <p id="date" class="py-2 mb-2">${formatTime(data.list[i].dt)}</p>
-                        <div>
+                        <p class="date py-2 mb-2">${formatTime(data.list[i].dt)}</p>
+                        <div class="temp">
                             <p class="m-0">${data.list[i].main.temp}<sup>o</sup>F</p>
                             <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="">
                         </div>
-                        <div>
+                        <div class="des">
                             <p class="mb-3">Description: ${data.list[i].weather[0].description}</p>
                             <p class="mb-3">Humidity: ${data.list[i].main.humidity}</p>
                         </div>
@@ -131,7 +122,7 @@ $(function(){
             if ( i % 8 === 0) {
                 $("#forecast-card").append(`
                     <div class="card-wrapper">
-                        <p id="date" class="py-2 mb-2">${formatTime(data.list[i].dt)}</p>
+                        <p class="date py-2 mb-2">${formatTime(data.list[i].dt)}</p>
                         <div>
                             <p class="m-0">${data.list[i].main.temp}<sup>o</sup>F</p>
                             <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="">
