@@ -489,7 +489,13 @@ function capitalizeEveryOtherLetter(string) {
      *        { name: "Martin",  age: 16, budget: 1600 }
      *    ]) ➞ 62600
      */
-
+    function getBudgets (arrayOfObjects) {
+        let sumOfPeopleBudgets = 0;
+        arrayOfObjects.forEach(item => {
+            sumOfPeopleBudgets += item.budget;
+        });
+        return sumOfPeopleBudgets;
+    }
 
     /**
      * Get Student Top Notes
@@ -538,7 +544,6 @@ function capitalizeEveryOtherLetter(string) {
      * Notes
      * If the given string does not contain "a", "b", or "c", return null.
      */
-
 
 // Write a function called removeBs that takes in an array of strings and returns an array of strings with all b's removed from each string. Assume the array contains only string elements.
 

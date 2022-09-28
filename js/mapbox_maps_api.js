@@ -16,7 +16,7 @@ const restaurants = [
         name: "Clementine",
         longitude: -98.52192,
         latitude: 29.53303,
-        moreInfo: ""
+        moreInfo: "Food was delicious!!! They were very thoughtful and helpful"
     }
 
 ]
