@@ -1,6 +1,6 @@
 $(function(){
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoidGVzdGVraWUiLCJhIjoiY2w4ZXB1aXl2MDAyYTN3bmdiano1dzd6OSJ9.nHzI_4vctysm2PeVKn2fdw';
+    // mapbox map that has a draggable marker
+    mapboxgl.accessToken = WEATHER_MAP_API_TOKEN;
     const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
         container: 'map',
@@ -18,20 +18,18 @@ $(function(){
     function onDragEnd() {
         let lngLat = marker.getLngLat();
         lngLat = Object.values(lngLat);
-        console.log(lngLat);
-        updatedAPIRequest(lngLat);
+        updateAPIRequest(lngLat);
     }
 
     marker.on('dragend', onDragEnd);
 
-    // This is the initial API request
+    // This is the initial API request for San Antonio forecast
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat:    29.423017,
         lon:   -98.48527,
         units: "imperial"
     }).done(function(data) {
-        console.log(data);
         $("#city-name").html(`Current City: ${data.city.name}`);
         for (let i = 0; i < data.list.length; i++) {
             if( i % 8 === 0) {
@@ -46,8 +44,8 @@ $(function(){
                             <p class="mb-3">Description: ${data.list[i].weather[0].description}</p>
                             <p class="mb-3">Humidity: ${data.list[i].main.humidity}</p>
                         </div>
-                        <p class="mb-3">${windCardinalDirection(data.list[i].wind.deg)}</p>
-                        <p class="mb-3 bt-light">pressure: ${data.list[i].main.pressure}</p>
+                        <p class="mb-3">Wind: ${windCardinalDirection(data.list[i].wind.deg)}</p>
+                        <p class="mb-3 bt-light">Pressure: ${data.list[i].main.pressure}</p>
                     </div>
                 `);
             }
@@ -92,7 +90,7 @@ $(function(){
         }
         return cardinalDirection;
     }
-
+    // the appendLeadingZeroes function append zero to hour, minutes and seconds
     function appendLeadingZeroes(n){
         if(n <= 9){
             return "0" + n;
@@ -101,6 +99,7 @@ $(function(){
     }
 
     const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    // The format function formats the time stamp
     function formatTime(timeStamp){
         let dateTime = new Date(timeStamp * 1000);
         let year = dateTime.getFullYear();
@@ -114,7 +113,7 @@ $(function(){
     }
 
 // ==================================================================================================================//
-    // update the weather card based the new API response passed from
+    // update the weather card based on the new API response passed from
     // the updatedAPIRequest function
     function updateCard(data) {
         $("#forecast-card").empty();
@@ -131,16 +130,16 @@ $(function(){
                             <p class="mb-3">Description: ${data.list[i].weather[0].description}</p>
                             <p class="mb-3">Humidity: ${data.list[i].main.humidity}</p>
                         </div>
-                        <p class="mb-3">${windCardinalDirection(data.list[i].wind.deg)}</p>
-                        <p class="mb-3 bt-light">pressure: ${data.list[i].main.pressure}</p>
+                        <p class="mb-3">Wind: ${windCardinalDirection(data.list[i].wind.deg)}</p>
+                        <p class="mb-3 bt-light">Pressure: ${data.list[i].main.pressure}</p>
                     </div>
                 `);
             }
         }
     }
-    // this function gets the coordinate to the get http request and
+    // this function gets the coordinates and passed it to the http request and
     // pass the data to updateCard function
-    function updatedAPIRequest (coordinate) {
+    function updateAPIRequest (coordinate) {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: OPEN_WEATHER_APPID,
             lat:  coordinate[1],
@@ -152,22 +151,40 @@ $(function(){
         });
     }
 
-    // generate a new coordinates based on a new location
+    // generate a new coordinates based on a new location that the
+    // user inputs and pass those coordinates to 'updateAPIRequest' function
     document.getElementById("searchButton").addEventListener('click', function(e) {
         e.preventDefault();
 
         const address = document.getElementById("inputValue").value;
-        console.log(address);
 
         geocode(address, MAPBOX_MAP_API_TOKEN).then(function(coordinates){
-            console.log(coordinates);
                marker.setLngLat(coordinates)
                 .addTo(map);
             map.setCenter(coordinates);
 
-            updatedAPIRequest(coordinates);
+            updateAPIRequest(coordinates);
             $("#inputValue").val('');
         });
     });
+    // get coordinates when the user enters the new location and
+    // the event listener function listens to keyup and if the
+    // key the user press is equal to 'enter' run the code with in the block
+    $(document).on("keyup", function(event){
+        if (event.originalEvent.key === "Enter") {
+            const address = document.getElementById("inputValue").value;
+
+            geocode(address, MAPBOX_MAP_API_TOKEN).then(function(coordinates){
+                console.log(coordinates);
+                marker.setLngLat(coordinates)
+                    .addTo(map);
+                map.setCenter(coordinates);
+
+                updateAPIRequest(coordinates);
+                $("#inputValue").val('');
+            });
+        }
+    });
+
 
 });
