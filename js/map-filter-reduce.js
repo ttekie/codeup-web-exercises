@@ -49,9 +49,10 @@ const longestEmail = users.reduce((longest, user) =>{
     return longest;
 }, '');
 
-const usersNameInSingleString = users.reduce((userName, user) =>{
+const usersNameInSingleString = users.reduce((userName, user) => {
     userName.push(user.name);
     return userName;
-}, []);
-usersNameInSingleString.join(', ');
+}, []).join(', ');
+console.log(usersNameInSingleString);
+
 
