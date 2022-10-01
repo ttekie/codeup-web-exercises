@@ -53,6 +53,6 @@ const usersNameInSingleString = users.reduce((userName, user) => {
     userName.push(user.name);
     return userName;
 }, []).join(', ');
-console.log(usersNameInSingleString);
+
 
 
