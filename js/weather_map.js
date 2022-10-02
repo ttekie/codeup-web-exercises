@@ -4,15 +4,18 @@ $(function(){
     const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
         container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [0, 0],
-        zoom: 2
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.48527, 29.423017], // starting position [lng, lat]
+        zoom: 11, // starting zoom
     });
 
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // create a new marker object
     const marker = new mapboxgl.Marker({
         draggable: true
-    }).setLngLat([0, 0])
+    }).setLngLat([-98.48527, 29.423017])
         .addTo(map);
 
     function onDragEnd() {
