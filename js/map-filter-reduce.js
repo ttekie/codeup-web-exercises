@@ -48,11 +48,19 @@ const longestEmail = users.reduce((longest, user) =>{
     }
     return longest;
 }, '');
-
+console.log(longestEmail);
 const usersNameInSingleString = users.reduce((userName, user) => {
     userName.push(user.name);
     return userName;
 }, []).join(', ');
 
-
-
+// Bonus
+let uniqueLanguages = users.reduce((accumulator, user) => {
+    user.languages.forEach(function(language) {
+        if(!accumulator.includes(language)) {
+            accumulator.push(language);
+        }
+    });
+    return accumulator;
+}, []);
+console.log(uniqueLanguages);

@@ -436,8 +436,8 @@ function cityStateObject(cityAndState) {
 function analyzeString(string) {
     return {
         length: string.length,
-        firstLetter: string.charAt().toLowerCase(),
-        lastLetter: string.charAt(string.length - 1).toLowerCase();
+        firstLetter: string.charAt(0).toLowerCase(),
+        lastLetter: string.charAt(string.length - 1).toLowerCase()
     }
 }
 
@@ -571,7 +571,21 @@ function capitalizeEveryOtherLetter(string) {
 // Write a function that accepts an array of bowling scores and returns true if the highest score is divisible by 3
 
 
+/************************************************ DOM Warmup *******************************************************/
 
+// When the mouse enters the h2 with the text "Lorem Generator",
+// A paragraph contain lorem appears in the div with the id of loremParagraphs
+$("h2").mouseenter(function() {
+    $("#loremParagraphs").append("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>");
+});
+// When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+$("#hotPinkIt").click(function() {
+    $("#loremParagraphs").toggleClass("hotpink");
+});
 
-
-
+// Bonus challenge: when the user clicks on the "Pink Blinky" button, all the text in the div with the id of loremParagraphs alternates between black and hotpink once every three seconds.
+$("#blinkPink").click(function() {
+    setInterval(function(){
+        $("#loremParagraphs").toggleClass("hotpink");
+    }, 3000);
+})
