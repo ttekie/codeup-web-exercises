@@ -573,6 +573,13 @@ function capitalizeEveryOtherLetter(string) {
 
 /************************************************ DOM Warmup *******************************************************/
 
+// When the user clicks the button that has the text "Change Heading", the
+// text of the <h1> element changes to read "I pwn the DOM"
+
+// Every time the user enters a character in the input with id "source", that
+// character appears in the <p> element with the id "output"
+
+
 // When the mouse enters the h2 with the text "Lorem Generator",
 // A paragraph contain lorem appears in the div with the id of loremParagraphs
 $("h2").mouseenter(function() {

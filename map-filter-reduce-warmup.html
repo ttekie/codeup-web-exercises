@@ -5,6 +5,7 @@
   <title>Map, Filter, Reduce Mini-Exercises</title>
 </head>
 <body>
+<h1>Map, Filter, Reduce Mini-Exercises</h1>
 <script>
   "use strict";
   // TODO: Given the following array, complete the todos...
@@ -67,7 +68,9 @@
   // FILTER
   // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
   const dogsYoungerThan10 = dogs.filter((dogObj) => {
-    return dogObj.age > 10;
+      if (dogObj.age < 10) {
+        return dogObj;
+      }
   });
   console.log('Exercise 4:', dogsYoungerThan10);
   // TODO 5: using filter, create a new array containing only dogs named 'Lexie'
@@ -76,6 +79,7 @@
   });
   console.log('Exercise 5:', dogsNamedLexie);
   // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
+
   console.log('Exercise 6:');
   // REDUCE
   // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
