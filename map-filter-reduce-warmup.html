@@ -79,10 +79,13 @@
   });
   console.log('Exercise 5:', dogsNamedLexie);
   // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
-
-  console.log('Exercise 6:');
+  const dogsTrainedAndYoungerThan10 = dogs.filter((dogObj) => {
+    return dogObj.isTrained && dogObj.age < 10;
+  });
+  console.log('Exercise 6:', dogsTrainedAndYoungerThan10);
   // REDUCE
   // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
+  const dogsNameWithNoSpace =
   console.log('Exercise 7:');
   // TODO 8: using reduce, return the total of adding all dog ages together (18)
   console.log('Exercise 8:');
@@ -106,6 +109,7 @@
   // let dogsCopy = dogs.slice();
   let dogsCopy = [...dogs];
   console.log(dogsCopy);
+
 
 </script>
 </body>

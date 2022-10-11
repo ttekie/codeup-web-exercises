@@ -35,7 +35,7 @@ $(function(){
     }).done(function(data) {
         $("#city-name").html(`Current City: ${data.city.name}`);
         for (let i = 0; i < data.list.length; i++) {
-            if( i % 8 === 0) {
+            if ( i % 8 === 0) {
                 $("#forecast-card").append(`
                     <div class="card-wrapper">
                         <p class="date py-2 mb-2">${formatTime(data.list[i].dt)}</p>
